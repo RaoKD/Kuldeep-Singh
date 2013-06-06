@@ -1,0 +1,71 @@
+<center>
+<div dir="ltr" style="text-align: left;" trbidi="on"><form><b>Enter Widget Title</b><br>
+<input id="widgettitle" onchange="updatetitle()" onclick="this.value=''" style="width: 450px;" value="Widget Title"><br>
+<br>
+<b>Enter Your Blog Url</b><br>
+<input id="info_url" onchange="updateinfourl()" onclick="this.value=''" style="width: 450px;" value="Blog Url"><br>
+<br>
+<b>Enter Your Logo Image Logo Url</b><br>
+<input id="logo_url" onchange="updatelogourl()" onclick="this.value=''" style="width: 450px;" value="Logo Image Url"><br>
+<br>
+<b>Paste The Widget Content Value (HTML/Javascript)</b><br>
+<textarea id="widget_content" onchange="convert()" style="height: 206px; margin-bottom: 2px; margin-left: 2px; margin-right: 2px; margin-top: 2px; width: 448px;"></textarea><br>
+<br>
+<b>Copy The Form &amp; Paste In Post&nbsp;</b><br>
+<textarea id="widget_api" onclick="SelectAll('widget_api')" style="height: 176px; margin-bottom: 2px; margin-left: 2px; margin-right: 2px; margin-top: 2px; width: 533px;">&lt;!-- RaoKDblogs.blogspot.com Add to Blogger Button Generator --&gt;&lt;form action="http://www.blogger.com/add-widget" method="POST"&gt;&lt;input type="hidden" name="widget.title" value="titlevalue"/&gt;&lt;input name="widget.content" type="hidden" value="widgetcontentvalue" /&gt;&lt;input name="widget.template" type="hidden" value="&amp;lt;data:content/&amp;gt;" /&gt;&lt;input type="hidden" name="infoUrl" value="infoaddress"/&gt;&lt;input type="hidden" name="logoUrl" value="logoaddress"/&gt;&lt;input alt="Add to Blogger" src="https://lh6.googleusercontent.com/-WdfU6eHYSdE/UbBP3iJzXBI/AAAAAAAAAhM/QCDADqIPgq8/h103/btsnts_add_to_blogger.gif" type="image" /&gt;&lt;/form&gt;&lt;!-- RaoKDblogs.blogspot.com Add to Blogger Button Generator ends --&gt;&lt;br /&gt; </textarea></form></div><br>
+<script type="text/javascript">
+ 
+var replaceText1 = "infoaddress";
+var replaceText2 = "logoaddress";
+var replaceText3 = "widgetcontentvalue";
+var replaceText4 = "titlevalue";
+function updateinfourl(){
+
+var info_url = document.getElementById('info_url').value;
+var widget_api=document.getElementById('widget_api');
+widget_api.value = widget_api.value.replace(replaceText1,info_url);
+}
+
+function updatetitle(){
+
+var widget_title = document.getElementById('widgettitle').value;
+var widget_api=document.getElementById('widget_api');
+widget_api.value = widget_api.value.replace(replaceText4,widget_title);
+}
+
+function updatelogourl(){
+var logo_url = document.getElementById('logo_url').value;
+var widget_api=document.getElementById('widget_api');
+widget_api.value = widget_api.value.replace(replaceText2,logo_url);
+}
+
+
+function convert(){
+ var ele1 = document.getElementById("widget_content");
+ var replaced;
+ replaced = ele1.value;
+ replaced = replaced.replace(/</ig, "&lt;");
+ replaced = replaced.replace(/>/ig, "&gt;");
+ replaced = replaced.replace(/"/ig, "&quot;");
+ replaced = replaced.replace(/&#177;/ig, "&plusmn;");
+ replaced = replaced.replace(/&#169;/ig, "&copy;");
+ replaced = replaced.replace(/&#174;/ig, "&reg;");
+ replaced = replaced.replace(/howdy/ig, "ya'll");
+ ele1.value = replaced;
+var widgetvalue = ele1.value;
+var widget_api=document.getElementById('widget_api');
+widget_api.value = widget_api.value.replace(replaceText3,widgetvalue);
+}
+function SelectAll(id)
+{
+    document.getElementById(id).focus();
+    document.getElementById(id).select();
+}
+</script><br>
+<br>
+<div dir="ltr" style="text-align: left;" trbidi="on"><div style="text-align: center;"><span style="font-family: Verdana, sans-serif;">© 2013 <a href="http://RaoKDblogs.blogspot.com/" target="_blank">Rao KD Blogs</a>. All Rights Reserved</span></div><div style="text-align: center;"><span style="font by Hemant Verma-family: Verdana, sans-serif;"></span></div></div><style>
+.comment-bubble{
+display:none;
+} 
+</style>
+</center>
